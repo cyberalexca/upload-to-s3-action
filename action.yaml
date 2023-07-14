@@ -1,0 +1,21 @@
+name: Deploy files to S3 s3Bucket
+description: 'Deploy a ststic website to S3'
+
+inputs:
+  bucket:
+    description: 'S3 bucket name'
+    required: true
+  bucket-region:
+    description: 'S3 bucket region'
+    required: true
+  dist-folder:
+    description: 'The folder, containing deployable files'
+    required: true
+
+outputs:
+  website-url:
+    description: Website URL of the deployment
+
+runs:
+  using: 'node16'
+  main: 'main.js'
